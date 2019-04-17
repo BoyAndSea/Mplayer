@@ -1,0 +1,9 @@
+CC = gcc  
+MAINC = main.c window.c  file_ops.c process.c sharememory.c 
+EXEC = main
+
+CFLAGS = `pkg-config --cflags --libs gtk+-2.0 gmodule-export-2.0`
+main:  
+	$(CC)  $(MAINC)  -o $(EXEC) $(CFLAGS) -lgthread-2.0
+clean:
+	rm $(EXEC) -rf
